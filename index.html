@@ -10,26 +10,50 @@
 <body>
     <div class="login-container">
         <div class="body-container">
-            <div class="left-body-container"></div>
+            <div class="left-body-container">Some text here <br> I dont know now <br>I'll find something</div>
 
 
 
             <div class="right-body-container">
                 <form action="" class="login-form-container">
                     <div class="form-group">
-                        <label>Email</label>
-                        <input type="text" class="form-control">
+                        <label>Email:</label>
+                        <input type="text" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label>Password</label>
-                        <input type="text" class="form-control">
+                        <label>Password:</label>
+                        <input type="password" class="form-control" required>
                     </div>
                     <input type="submit" value="LogIn" class="li-btn">
-                    <a href="" style="color: white;">Create account</a>
+                    <p id="create-link">Create account</p>
                 </form>
             </div>
         </div>
+
+        <form action="" class="signup-form-container">
+            <div class="form-group">
+                <label>Username:</label>
+                <input type="text" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="text" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Confirm Password:</label>
+                <input type="password" class="form-control" required>
+            </div>
+            <input type="submit" value="SignUp" class="li-btn">
+        </form>
     </div>
+
+
+    <script src="./JS/login.js"></script>
+
 </body>
 
 </html>
