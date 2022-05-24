@@ -12,7 +12,7 @@ body {
 
 /* LOG IN PAGE STARTS HERE */
 
-.login-container {
+.login-global-container {
     height: 100%;
     width: 100%;
     background-image: url("../assets/images/login-bg.jpg");
@@ -25,8 +25,9 @@ body {
     align-items: center;
 }
 
-.body-container {
+.login-body-container {
     /* background-color: brown; */
+    
     width: 70%;
     display: flex;
     justify-content: space-around;
@@ -123,6 +124,14 @@ body {
     cursor: pointer;
     align-self: center;
     width: fit-content;
+}
+
+.x-icon{
+    height: fit-content;
+    width: fit-content;
+    align-self: flex-end;
+    margin-bottom: 25px;
+    cursor: pointer;
 }
 
 
