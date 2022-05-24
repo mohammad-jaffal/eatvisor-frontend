@@ -11,13 +11,13 @@ var x_icon = document.getElementsByClassName("x-icon")[0]
 
 create_link.addEventListener("click", function(){
     signup_form.style.display = "flex";
-    body_container.style.pointerEvents = "none";
+    body_container.style.display = "none";
 });
 
 
 x_icon.addEventListener("click", function(){
     signup_form.style.display = "none";
-    body_container.style.pointerEvents = "all";
+    body_container.style.display = "flex";
 });
 
 }
