@@ -162,12 +162,46 @@ body {
     background-color: aqua;
     height: 100px;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.logo-name-container{
+    display: flex;
+
+}
+
+.logo-container {
+    height: 90%;
+    width: fit-content;
+}
+
+.header-logo {
+    height: 100%;
+}
+
+.header-menu {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.header-menu > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-menu > div > a {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(134, 2, 2);
+    text-decoration: none;
 }
 
 .profile-picture-container {
     background-color: coral;
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     margin: 5%;
     border-radius: 50%;
 }
@@ -209,11 +243,45 @@ body {
 }
 
 
+/* HOME PAGE ENDS HERE */
+
+
+/* RESTAURANT PAGE STARTS HERE */
 
 
 
+.restaurant-image-container{
+    background-image: url(../assets/images/rest-1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: auto;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 1%;
+}
 
+.restaurant-info-container {
+    background-color: darkgreen;
+    height: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
 
+.restaurant-reviews-container {
+    background-color: rgb(0, 225, 255);
+    /* height: 1000px; */
+    margin: 10%;
+}
+
+.restaurant-review{
+    background-color: rgb(255, 127, 249);
+    height: 200px;
+    width: 100%;
+    margin-bottom: 10%;
+}
 
 
 
