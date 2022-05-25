@@ -186,11 +186,27 @@ body {
     margin: 1%;
     margin-top: 50px;
     background-color: dodgerblue;
+    padding: 5px;
     height: 300px;
     width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
+.restaurant-image {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
 
+.item-info-container {
+    background-color: bisque;
+    height: fit-content;
+}
 
 
 
