@@ -145,8 +145,37 @@ body {
 
 .home-global-container {
     background-color: rgb(241, 187, 115);
-    height: 100%;
+    height: auto;
     width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.home-body-container {
+    background-color: rgb(134, 96, 45);
+    height: 100%;
+    width: 70%;
+}
+
+.header-container {
+    background-color: aqua;
+    height: 100px;
+    width: 100%;
+}
+
+.profile-picture-container {
+    background-color: coral;
+    width: 300px;
+    height: 300px;
+    margin: 5%;
+    border-radius: 50%;
+}
+
+.restaurants-list-container {
+    background-color: rgb(118, 255, 152);
+    width: 100%;
+    height: 1000px;
 }
 
 
