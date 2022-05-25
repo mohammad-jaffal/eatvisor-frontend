@@ -175,9 +175,20 @@ body {
 .restaurants-list-container {
     background-color: rgb(118, 255, 152);
     width: 100%;
-    height: 1000px;
+    /* height: 1000px; */
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    flex-wrap: wrap;
 }
 
+.restaurant-list-item {
+    margin: 1%;
+    margin-top: 50px;
+    background-color: dodgerblue;
+    height: 300px;
+    width: 250px;
+}
 
 
 
