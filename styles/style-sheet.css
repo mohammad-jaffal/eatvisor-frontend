@@ -141,7 +141,13 @@ body {
 /* LOG IN PAGE ENDS HERE */
 
 
+/* HOME PAGE STARTS HERE */
 
+.home-global-container {
+    background-color: rgb(241, 187, 115);
+    height: 100%;
+    width: 100%;
+}
 
 
 
