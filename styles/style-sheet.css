@@ -219,13 +219,6 @@ body {
 }
 
 
-/* .profile-picture-container {
-    background-color: rgb(95, 255, 80);
-    width: 250px;
-    height: 250px;
-    margin: 5%;
-    border-radius: 50%;
-} */
 
 .restaurants-list-container {
     background-color: rgba(0, 0, 0, 0.1);
@@ -379,9 +372,77 @@ body {
 
 
 
+/* PROFILE PAGE STARTS HERE */
 
 
+.profile-picture-container {
+    background-color: rgb(95, 255, 80);
+    width: 300px;
+    height: 300px;
+    margin: 5%;
+    border-radius: 50%;
+}
 
 
+.profile-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.profile-edit-btn{
+    align-self: center;
+    margin-right: 10%;
+    height: 25px;
+    width: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user-profile-info {
+    margin-left: 10%;
+}
 
 
+.user-reviews-container {
+    /* background-color: rgb(0, 225, 255); */
+    /* height: 1000px; */
+    margin: 10%;
+}
+
+.user-review{
+    background-color: rgba(0, 0, 0, 0.1);
+    /* height: 200px; */
+    border-radius: 10px;
+    border-style: solid;
+    border-width: thin;
+    width: 100%;
+    margin-bottom: 10%;
+    padding: 20px;
+}
+
+.restaurant-profile-review {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.restaurant-profile-review-icon {
+    background-color: gold;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.restaurant-profile-review-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+.restaurant-rating-review {
+    color: rgb(255, 189, 22);
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
