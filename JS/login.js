@@ -83,6 +83,7 @@ window.onload = function () {
                 console.log(response.data["success"]);
                 console.log(response.data["user_id"]);
                 if(response.data["success"]){
+                    localStorage.setItem("user_id",response.data["user_id"]);
                     location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/home.html';
                 }
             })
