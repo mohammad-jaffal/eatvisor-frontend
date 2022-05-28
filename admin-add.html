@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Admin page</title>
     <link rel="stylesheet" href="./styles/style-sheet.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
+
 <body>
     <div class="admin-global-container">
         <div class="admin-header-container">
@@ -23,7 +25,7 @@
         </div>
 
         <div class="admin-reviews-container">
-            
+
             <div class="add-form-container">
                 <div class="form-group">
                     <label>restaurant name:</label>
@@ -33,10 +35,14 @@
                     <label>Location:</label>
                     <input type="text" id="rest_location" class="form-control" required>
                 </div>
-                <button class="li-btn" id="rest_img_upload">Upload Image</button>
+                <div class="form-group">
+                    <label for="myfile">Upload image:</label>
+                    <input type="file" id="myfile" name="myfile">
+                </div>
+                <!-- <button class="li-btn" id="rest_img_upload">Upload Image</button> -->
                 <button class="li-btn" id="rest_add">Add</button>
             </div>
-            
+
         </div>
     </div>
     <script src="./JS/admin-add.js"></script>

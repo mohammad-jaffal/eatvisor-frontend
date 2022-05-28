@@ -11,6 +11,13 @@ window.onload = async function () {
     header_profile.addEventListener('click', function(){
         location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/profile.html';
     })
+    header_home.addEventListener('click', function(){
+        location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/home.html';
+    })
+    header_logout.addEventListener('click', function(){
+        alert('logout')
+    })
+    
 
 
 

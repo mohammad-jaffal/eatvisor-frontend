@@ -13,6 +13,26 @@ window.onload = async function () {
     var user_reviews;
     var review_restname;
 
+
+
+
+
+    header_profile.addEventListener('click', function(){
+        location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/profile.html';
+    })
+    header_home.addEventListener('click', function(){
+        location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/home.html';
+    })
+    header_logout.addEventListener('click', function(){
+        alert('logout')
+    })
+
+
+
+
+
+
+
     // get user profile data
     let data = new FormData();
     data.append('user_id', user_id);
