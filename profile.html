@@ -4,6 +4,7 @@
 <head>
     <title>Profile</title>
     <link rel="stylesheet" href="./styles/style-sheet.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -28,36 +29,23 @@
             </div>
 
             <div class="user-profile-info">
-                <p>Username</p>
-                <p>bio and more stuff to add later</p>
+                <p id="profile_username" >Username</p>
+                <p id="profile_email" >Email</p>
+                <p id="profile_bio" >bio and more stuff to add later</p>
             </div>
             
 
-            <div class="user-reviews-container">
-                <div class="user-review">
+            <div class="user-reviews-container" id="user_reviews_container">
+
+
+                <!-- <div class="user-review">
                     <div class="restaurant-profile-review">
                         <div class="restaurant-profile-review-icon"></div>
                         <div class="restaurant-profile-review-name">restaurant name</div>
                     </div>
                     <div class="user-rating-review">5</div>
                     <div class="user-text-review">This one is soo bad, i didnt even try it </div>
-                </div>
-                <div class="user-review">
-                    <div class="restaurant-profile-review">
-                        <div class="restaurant-profile-review-icon"></div>
-                        <div class="restaurant-profile-review-name">restaurant name</div>
-                    </div>
-                    <div class="user-rating-review">5</div>
-                    <div class="user-text-review">This one is soo bad, i didnt even try it </div>
-                </div>
-                <div class="user-review">
-                    <div class="restaurant-profile-review">
-                        <div class="restaurant-profile-review-icon"></div>
-                        <div class="restaurant-profile-review-name">restaurant name</div>
-                    </div>
-                    <div class="user-rating-review">5</div>
-                    <div class="user-text-review">This one is soo bad, i didnt even try it </div>
-                </div>
+                </div> -->
                 
 
             </div>
@@ -67,6 +55,8 @@
             
         </div>
     </div>
+
+    <script src="./JS/profile.js"></script>
 </body>
 
 </html>

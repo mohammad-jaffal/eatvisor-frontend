@@ -3,10 +3,15 @@ window.onload = async function () {
     console.log("hello from the other side" + localStorage.getItem("user_id"));
 
     var rest_list_container = document.getElementById("rest_list_container")
-
-
-
+    var header_profile = document.getElementById("header_profile")
     var x;
+
+
+
+    header_profile.addEventListener('click', function(){
+        location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/profile.html';
+    })
+
 
 
 

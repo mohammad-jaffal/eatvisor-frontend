@@ -11,8 +11,15 @@ window.onload = async function () {
 
     var rest_reviews_container = document.getElementById("restaurant_reviews_container")
 
+
+
+    header_profile.addEventListener('click', function(){
+        location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/profile.html';
+    })
+
     var review_username;
     var rest_info;
+    var rest_reviews;
     // get restaurants info
     let data = new FormData();
     data.append('restaurant_id', rest_id);
@@ -21,12 +28,12 @@ window.onload = async function () {
         url: 'http://localhost/eatvisor-backend/get-restaurant.php',
         data: data,
     }).then(function (response) {
-
+        rest_info = response.data
         console.log(response.data[0]['restaurant_name']);
 
-        rest_name.innerHTML = response.data[0]['restaurant_name']
-        rest_location.innerHTML = response.data[0]['location']
-        rest_rating.innerHTML = response.data[0]['rating']
+        rest_name.innerHTML = rest_info[0]['restaurant_name']
+        rest_location.innerHTML = rest_info[0]['location']
+        rest_rating.innerHTML = rest_info[0]['rating']
 
     })
 
@@ -39,8 +46,8 @@ window.onload = async function () {
         data: data,
     }).then(async function (response) {
 
-        rest_info = response.data
-        console.log(rest_info[0]);
+        rest_reviews = response.data
+        console.log(rest_reviews[0]);
 
 
 
@@ -48,11 +55,11 @@ window.onload = async function () {
         ///////////////////////////////////
 
 
-        for (var i = 0; i < rest_info.length; i++) {
+        for (var i = 0; i < rest_reviews.length; i++) {
 
             // get the username for each review
             let data1 = new FormData();
-            data1.append('user_id', rest_info[i]['users_user_id']);
+            data1.append('user_id', rest_reviews[i]['users_user_id']);
 
             await axios({
                 method: 'post',
@@ -72,8 +79,8 @@ window.onload = async function () {
                              <div class="user-profile-review-icon"></div>
                              <div class="user-profile-review-name">${review_username}</div>
                          </div>
-                      <div class="user-rating-review">${rest_info[i]['rating']}</div>
-                        <div class="user-text-review">${rest_info[i]['review_text']}</div>`;
+                      <div class="user-rating-review">${rest_reviews[i]['rating']}</div>
+                        <div class="user-text-review">${rest_reviews[i]['review_text']}</div>`;
 
 
             rest_reviews_container.appendChild(card);
