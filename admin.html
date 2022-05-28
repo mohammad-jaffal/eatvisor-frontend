@@ -3,6 +3,7 @@
 <head>
     <title>Admin page</title>
     <link rel="stylesheet" href="./styles/style-sheet.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <div class="admin-global-container">
@@ -14,39 +15,26 @@
                 <h1>Eatvisor</h1>
             </div>
             <div class="header-menu">
-                <div><a href="">Users</a></div>
-                <div><a href="">Add restaurant</a></div>
-                <div><a href="">Monitor reviews</a></div>
-                <div><a href="">LogOut</a></div>
+                <div><a>Users</a></div>
+                <div><a id="header_add">Add restaurant</a></div>
+                <div><a id="header_monitor">Monitor reviews</a></div>
+                <div><a>LogOut</a></div>
             </div>
         </div>
 
-        <div class="user-card-container">
-            <div class="user-card">
+        <div class="user-card-container" id="user_card_container">
+
+            <!-- <div class="user-card">
                 <div class="user-card-image"></div>
                 <div class="user-card-info">
                     <div>username</div>
                     <div>email</div>
                     <div>bio</div>
                 </div>
-            </div>
-            <div class="user-card">
-                <div class="user-card-image"></div>
-                <div class="user-card-info">
-                    <div>username</div>
-                    <div>email</div>
-                    <div>bio</div>
-                </div>
-            </div>
-            <div class="user-card">
-                <div class="user-card-image"></div>
-                <div class="user-card-info">
-                    <div>username</div>
-                    <div>email</div>
-                    <div>bio</div>
-                </div>
-            </div>
+            </div> -->
+            
         </div>
     </div>
+    <script src="./JS/admin.js"></script>
 </body>
 </html>

@@ -82,10 +82,31 @@ window.onload = function () {
             }).then(function (response) {
                 console.log(response.data["success"]);
                 console.log(response.data["user_id"]);
-                if(response.data["success"]){
-                    localStorage.setItem("user_id",response.data["user_id"]);
-                    location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/home.html';
-                }
+
+                let data2 = new FormData();
+                data2.append('user_id', response.data["user_id"])
+                axios({
+                    method: 'post',
+                    url: 'http://localhost/eatvisor-backend/check-user.php',
+                    data: data2
+                }).then(function (type_response) {
+                    console.log(type_response.data[0]['type'])
+
+
+                    if (response.data["success"]) {
+                        if (type_response.data[0]['type'] == 1) {// 1 -> user 0 -> admin
+                            localStorage.setItem("user_id", response.data["user_id"]);
+                            location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/home.html';
+                        }
+                        if (type_response.data[0]['type'] == 0) {// 1 -> user 0 -> admin
+                            localStorage.setItem("user_id", response.data["user_id"]);
+                            location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/admin.html';
+                        }
+                    }
+
+                })
+
+
             })
 
         }
