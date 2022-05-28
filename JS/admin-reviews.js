@@ -1,9 +1,6 @@
-window.onload = async function(){
+window.onload = async function (){
 
-    var user_card_container = document.getElementById('user_card_container')
-    console.log('admin '+localStorage.getItem('user_id'))
-
-
+    admin_reviews_container = document.getElementById('admin_reviews_container')
 
     document.getElementById('header_users').addEventListener("click", function(){
         location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/admin.html';
@@ -18,11 +15,9 @@ window.onload = async function(){
 
 
 
-
-
     await axios({
         method: 'post',
-        url: 'http://localhost/eatvisor-backend/get-users.php',
+        url: 'http://localhost/eatvisor-backend/get-reviews.php',
     }).then(function (response) {
 
         
@@ -33,16 +28,19 @@ window.onload = async function(){
         for (var i = 0; i < response.data.length; i++) {
 
             const card = document.createElement('div');
-            card.className = "user-card"
-            card.innerHTML = `<div class="user-card-image"></div>
-            <div class="user-card-info">
-                <div>username: ${response.data[i]['username']}</div>
-                <div>email: ${response.data[i]['email']}</div>
-                <div>bio: ${response.data[i]['user_bio']}</div>
-            </div>`;
+            card.className = "admin-reviews"
+            card.innerHTML = `<div class="admin-reviews-info">
+            <div>user: ${response.data[i]['users_user_id']}</div>
+            <div>restaurant: ${response.data[i]['restaurants_restaurant_id']}</div>
+            <div>review: ${response.data[i]['review_text']}</div>
+        </div>
+        <div>
+            <button>accept</button>
+            <button>decline</button>
+        </div>`;
     
     
-            user_card_container.appendChild(card);
+            admin_reviews_container.appendChild(card);
     
     
         }
@@ -50,5 +48,6 @@ window.onload = async function(){
 
     })
 
-
 }
+
+

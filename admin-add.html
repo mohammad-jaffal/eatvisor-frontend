@@ -3,6 +3,7 @@
 <head>
     <title>Admin page</title>
     <link rel="stylesheet" href="./styles/style-sheet.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <div class="admin-global-container">
@@ -14,10 +15,10 @@
                 <h1>Eatvisor</h1>
             </div>
             <div class="header-menu">
-                <div><a href="">Users</a></div>
-                <div><a href="">Add restaurant</a></div>
-                <div><a href="">Monitor reviews</a></div>
-                <div><a href="">LogOut</a></div>
+                <div><a id="header_users">Users</a></div>
+                <div><a id="header_add">Add restaurant</a></div>
+                <div><a id="header_monitor">Monitor reviews</a></div>
+                <div><a>LogOut</a></div>
             </div>
         </div>
 
@@ -26,18 +27,19 @@
             <div class="add-form-container">
                 <div class="form-group">
                     <label>restaurant name:</label>
-                    <input type="text" class="form-control" required>
+                    <input type="text" id="rest_name" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label>Location:</label>
-                    <input type="text" class="form-control" required>
+                    <input type="text" id="rest_location" class="form-control" required>
                 </div>
                 <button class="li-btn" id="rest_img_upload">Upload Image</button>
-                <button class="li-btn" id="confirm_add">Add</button>
+                <button class="li-btn" id="rest_add">Add</button>
             </div>
             
         </div>
     </div>
+    <script src="./JS/admin-add.js"></script>
 </body>
 
 </html>
