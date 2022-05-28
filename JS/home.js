@@ -13,52 +13,59 @@ window.onload = async function () {
     await axios({
         method: 'post',
         url: 'http://localhost/eatvisor-backend/get-restaurants.php',
-    }).then(function (response)  {
-        
+    }).then(function (response) {
+
         x = response.data;
         console.log(x);
 
-        for(var i = 0 ; i < x.length ; i++){
-            rest_list_container.innerHTML += `<div id="rest_${x[i]['restaurant_id']}" class="restaurant-list-item">
-            <img src="./assets/images/rest-1.jpg" class="restaurant-image">
-            <div class="item-info-container">
-                <p>${x[i]['restaurant_name']}</p>
-                <p>${x[i]['rating']}</p>
-                <p>${x[i]['location']}</p>
-            </div>
-        </div>`;
 
-        
-            
-        }
+
 
     })
 
-    // for(var j = 0 ; j < x.length ; j++){
-    //     document.getElementById("rest_1").addEventListener("click", function(){
+    for (var i = 0; i < x.length; i++) {
+
+        const card = document.createElement('div');
+        card.id = `rest_${x[i]['restaurant_id']}`;
+        card.className = "restaurant-list-item"
+        card.innerHTML = `<img src="./assets/images/rest-1.jpg" class="restaurant-image">
+                <div class="item-info-container">
+                    <p>${x[i]['restaurant_name']}</p>
+                    <p>${x[i]['rating']}</p>
+                    <p>${x[i]['location']}</p>
+                </div>`;
+
+
+        rest_list_container.appendChild(card);
+
+
+    }
+
+
+
+    var items = document.getElementsByClassName("restaurant-list-item");
+    for (const element of items) { // You can use `let` instead of `const` if you like
+        element.addEventListener("click", function(){
+            console.log(element.id)
+        })
+    }
+
+
+
+
+    // for (var j = 0; j < x.length; j++) {
+    //     console.log("rest_" + x[j]["restaurant_id"])
+    //     document.getElementById(String("rest_" + x[j]["restaurant_id"])).addEventListener("click", function () {
     //         console.log(j)
     //     })
     // }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
+    // var rest_item = document.getElementById('rest_1')
+    // rest_item.addEventListener("click", function(){
+    //     console.log(x[1]["restaurant_id"])
+    // })
 
 
 
