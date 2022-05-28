@@ -85,8 +85,23 @@ window.onload = async function () {
     var dec_btns = document.getElementsByClassName("decline-btn");
     for (const element of dec_btns) { // You can use `let` instead of `const` if you like
         element.addEventListener("click", function () {
-            console.log('decline')
-            console.log(element.id)
+            console.log('accept')
+            var dec_id = element.id.split("_").pop()
+            console.log(dec_id)
+
+
+            let rid = new FormData();
+            rid.append('review_id', dec_id);
+            axios({
+                method: 'post',
+                url: 'http://localhost/eatvisor-backend/decline-review.php',
+                data: rid,
+            }).then(function (response) {
+                // console.log(response.data)
+                location.reload()
+            })
+
+
         })
     }
 
