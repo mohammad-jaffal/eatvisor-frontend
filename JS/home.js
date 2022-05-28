@@ -45,8 +45,10 @@ window.onload = async function () {
 
     var items = document.getElementsByClassName("restaurant-list-item");
     for (const element of items) { // You can use `let` instead of `const` if you like
-        element.addEventListener("click", function(){
+        element.addEventListener("click", function () {
             console.log(element.id)
+            localStorage.setItem("restaurant_id", element.id);
+            location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/restaurant.html';
         })
     }
 

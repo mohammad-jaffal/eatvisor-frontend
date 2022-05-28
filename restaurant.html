@@ -4,6 +4,7 @@
 <head>
     <title>Restaurant</title>
     <link rel="stylesheet" href="./styles/style-sheet.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -25,51 +26,30 @@
             </div>
 
 
-            <div class="restaurant-image-container">
+            <div class="restaurant-image-container" >
             </div>
             <div class="restaurant-info-container">
                 <div class="restaurant-info-left">
-                    <h2>Restaurant's name</h2>
-                    <h3>Restaurants's Loacation</h3>
+                    <h2 id="rest_name">Restaurant's name</h2>
+                    <h3 id="rest_location">Restaurants's Loacation</h3>
                 </div>
                 <div class="restaurant-info-right">
-                    <div>4</div>
+                    <div id="rest_rating">4</div>
                     <button class="review-btn">Review</button>
                 </div>
 
-
             </div>
-            <div class="restaurant-reviews-container">
-                <div class="restaurant-review">
-                    <div class="user-profile-review">
-                        <div class="user-profile-review-icon"></div>
-                        <div class="user-profile-review-name">username</div>
-                    </div>
-                    <div class="user-rating-review">5</div>
-                    <div class="user-text-review">This one is soo bad, i didnt even try it </div>
-                </div>
-                <div class="restaurant-review">
-                    <div class="user-profile-review">
-                        <div class="user-profile-review-icon"></div>
-                        <div class="user-profile-review-name">username</div>
-                    </div>
-                    <div class="user-rating-review">5</div>
-                    <div class="user-text-review">This one is soo bad, i didnt even try it </div>
-                </div>
-                <div class="restaurant-review">
-                    <div class="user-profile-review">
-                        <div class="user-profile-review-icon"></div>
-                        <div class="user-profile-review-name">username</div>
-                    </div>
-                    <div class="user-rating-review">5</div>
-                    <div class="user-text-review">This one is soo bad, i didnt even try it </div>
-                </div>
+
+            <div class="restaurant-reviews-container" id="restaurant_reviews_container">
+                
                 
 
             </div>
             
         </div>
     </div>
+
+    <script src="./JS/restaurant.js"></script>
 </body>
 
 </html>
