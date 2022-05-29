@@ -379,7 +379,8 @@ body {
 
 
 .profile-picture-container {
-    background-color: rgb(95, 255, 80);
+    background-color: rgba(46, 48, 46, 0.349);
+    overflow: hidden;
     width: 300px;
     height: 300px;
     margin: 5%;
@@ -591,4 +592,12 @@ body {
     margin-bottom: 10px;
     padding: 10px;
     font-size: 20px;
+}
+
+
+.profile_image_round{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
 }

@@ -14,10 +14,10 @@ window.onload = async function () {
     var rest_name = document.getElementById("rest_name")
     var rest_location = document.getElementById("rest_location")
     var rest_rating = document.getElementById("rest_rating")
-
+    
 
     var rest_reviews_container = document.getElementById("restaurant_reviews_container")
-
+    var restaurant_image_container =  document.getElementById("restaurant_image_container")
 
 
     header_profile.addEventListener('click', function(){
@@ -54,11 +54,13 @@ window.onload = async function () {
         data: data,
     }).then(function (response) {
         rest_info = response.data
-        console.log(response.data[0]['restaurant_name']);
+        console.log(rest_info[0]);
 
         rest_name.innerHTML = rest_info[0]['restaurant_name']
         rest_location.innerHTML = rest_info[0]['location']
         rest_rating.innerHTML = rest_info[0]['rating']
+
+        // restaurant_image_container.style.backgroundImage = url(`data:image/png;base64,${rest_info[0]['profile_picture']}`)
 
     })
 

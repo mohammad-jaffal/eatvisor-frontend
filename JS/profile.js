@@ -28,7 +28,7 @@ window.onload = async function () {
         var submit_edit = document.getElementById("submit_edit")
         var bio_area = document.getElementById("bio_area")
 
-
+        var profile_picture_container = document.getElementById("profile_picture_container")
 
 
 
@@ -103,9 +103,14 @@ window.onload = async function () {
             user_info = response.data;
             console.log("user info", user_info[0]);
 
-            profile_username.innerHTML = user_info[0]['username']
-            profile_email.innerHTML = user_info[0]['email']
-            profile_bio.innerHTML = user_info[0]['user_bio']
+            profile_username.innerHTML = "Username: "+user_info[0]['username']
+            profile_email.innerHTML = "Email: "+user_info[0]['email']
+            profile_bio.innerHTML = "Bio: "+user_info[0]['user_bio']
+
+            var image = new Image();
+            image.className = "profile_image_round"
+            image.src = `data:image/png;base64,${user_info[0]['profile_picture']}`;
+            profile_picture_container.appendChild(image)
 
         })
 
@@ -164,13 +169,27 @@ window.onload = async function () {
         })
 
 
+
+
+
+
+
+
+        
+
+       
+
+
+
+
+
+
+
+
         
         submit_edit.addEventListener("click", function(){
 
-
-
-
-
+            // editing bio 
             if(bio_area.value != ""){
                 let bio_data = new FormData();
 
@@ -186,17 +205,43 @@ window.onload = async function () {
                 })
             }
 
-            if(false){
-                let img_data = new FormData();
+
+
+            // uplaoding image as base64
+            if(document.getElementById('profile_pic_input').files.length != 0){
+
+                console.log("converting");
+                var base64String = "";
+                const selectedFile = document.getElementById('profile_pic_input').files[0];
+                var reader = new FileReader();
+                
+                  
+                reader.onload = function () {
+                    base64String = reader.result.replace("data:", "")
+                        .replace(/^.+,/, "");
+              
+                    imageBase64Stringsep = base64String;
+              
+                    // alert(imageBase64Stringsep);
+                    console.log("-----------",base64String);
+                    
+
+
+                    let img_data = new FormData();
 
                 img_data.append('user_id', user_id);
-                img_data.append('profile_pic', "picture string");
-                // console.log(data);
+                img_data.append('profile_pic', base64String);
+                console.log(data);
                 axios({
                     method: 'post',
                     url: 'http://localhost/eatvisor-backend/edit-profile-img.php',
                     data: img_data,
-                }).then(function (response) {})
+                }).then(function (response) {
+                    console.log(response.data)
+                })
+    
+                }
+                reader.readAsDataURL(selectedFile); 
             }
 
             
