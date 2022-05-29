@@ -51,7 +51,7 @@ window.onload = async function () {
         const card = document.createElement('div');
         card.id = `rest_${x[i]['restaurant_id']}`;
         card.className = "restaurant-list-item"
-        card.innerHTML = `<img src="./assets/images/rest-1.jpg" class="restaurant-image">
+        card.innerHTML = `<img src="data:image/png;base64,${x[i]['restaurant_image']}" class="restaurant-banner-image ">
                 <div class="item-info-container">
                     <p>${x[i]['restaurant_name']}</p>
                     <p>${x[i]['rating']}</p>
