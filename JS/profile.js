@@ -148,20 +148,18 @@ window.onload = async function () {
 
                 })
 
-                console.log('creating '+i)
 
                 const card = document.createElement('div');
                 card.className = "user-review"
                 card.innerHTML = `<div class="restaurant-profile-review">
                 <div class="restaurant-profile-review-icon">
-                <img src="data:image/png;base64,${restaurant_review_info[i]['restaurant_image']}">
+                <img src="data:image/png;base64,${restaurant_review_info[0]['restaurant_image']}">
                 </div>
-                <div class="restaurant-profile-review-name">${restaurant_review_info[i]['restaurant_name']}</div>
+                <div class="restaurant-profile-review-name">${restaurant_review_info[0]['restaurant_name']}</div>
                 </div>
                 <div class="user-rating-review">${user_reviews[i]['rating']}</div>
                 <div class="user-text-review">${user_reviews[i]['review_text']}</div>`;
 
-                console.log('appending '+i)
                 user_reviews_container.appendChild(card);
 
 
