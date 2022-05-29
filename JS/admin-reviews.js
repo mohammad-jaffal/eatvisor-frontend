@@ -1,5 +1,13 @@
 window.onload = async function () {
 
+
+    if(localStorage.getItem("user_id") == "loggedout"){
+        location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/index.html';
+    }else{
+
+
+
+
     admin_reviews_container = document.getElementById('admin_reviews_container')
 
     document.getElementById('header_users').addEventListener("click", function () {
@@ -11,6 +19,16 @@ window.onload = async function () {
     document.getElementById('header_monitor').addEventListener("click", function () {
         location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/admin-reviews.html';
     })
+
+    document.getElementById("header_logout").addEventListener('click', function(){
+        console.log("logging out")
+        localStorage.setItem("user_id", "loggedout");
+        location.reload()
+    })
+
+
+
+
 
     var all_reviews;
 
@@ -112,3 +130,4 @@ window.onload = async function () {
 }
 
 
+}

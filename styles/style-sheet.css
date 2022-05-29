@@ -12,14 +12,14 @@ body {
 
 /* LOG IN PAGE STARTS HERE */
 
-.site-title{
+.site-title {
     font-size: 100px;
 }
 
 .login-global-container {
     height: 100%;
     width: 100%;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/eddys.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/eddys.jpg');
     /* background-image: url("../assets/images/login-bg.jpg"); */
     background-position: center;
     background-repeat: no-repeat;
@@ -32,7 +32,7 @@ body {
 
 .login-body-container {
     /* background-color: brown; */
-    
+
     width: 70%;
     display: flex;
     justify-content: space-around;
@@ -55,7 +55,7 @@ body {
     text-align: center;
 }
 
-.login-form-container{
+.login-form-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,7 +68,7 @@ body {
     opacity: .9;
 }
 
-.signup-form-container{
+.signup-form-container {
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -82,15 +82,15 @@ body {
     opacity: .9;
 }
 
-.form-group{
+.form-group {
     display: flex;
     justify-content: space-between;
     vertical-align: middle;
-    
+
     /* align-items: center; */
 }
 
-.form-control{
+.form-control {
     width: 70%;
     height: 40px;
     border-radius: 10px;
@@ -98,7 +98,7 @@ body {
     font-size: 20px;
 }
 
-.form-group > label {
+.form-group>label {
     font-size: 20px;
     font-weight: bold;
     display: flex;
@@ -118,10 +118,10 @@ body {
     margin-top: 15px;
     margin-bottom: 10px;
     align-self: center;
-    
+
 }
 
-#create-link{
+#create-link {
     color: white;
     font-size: 18px;
     cursor: pointer;
@@ -129,7 +129,7 @@ body {
     width: fit-content;
 }
 
-.x-icon{
+.x-icon {
     height: fit-content;
     width: fit-content;
     align-self: flex-end;
@@ -155,7 +155,7 @@ body {
 
 .home-body-container {
     /* background-color: rgb(134, 96, 45); */
-    
+
     background-color: rgba(0, 0, 0, 0.062);
     height: 100%;
     width: 70%;
@@ -171,7 +171,8 @@ body {
     display: flex;
     justify-content: space-between;
 }
-.logo-name-container{
+
+.logo-name-container {
     display: flex;
     margin-left: 10px;
 
@@ -192,13 +193,13 @@ body {
     width: 40%;
 }
 
-.header-menu > div {
+.header-menu>div {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.header-menu > div > a {
+.header-menu>div>a {
     font-size: 20px;
     font-weight: bold;
     color: black;
@@ -245,7 +246,7 @@ body {
     border-style: solid;
     border-width: thin;
     flex-direction: column;
-    justify-content: space-between;  
+    justify-content: space-between;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -270,7 +271,7 @@ body {
 
 
 
-.restaurant-image-container{
+.restaurant-image-container {
     background-image: url(../assets/images/rest-1.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -331,7 +332,7 @@ body {
     margin: 10%;
 }
 
-.restaurant-review{
+.restaurant-review {
     background-color: rgba(0, 0, 0, 0.1);
     /* height: 200px; */
     border-radius: 10px;
@@ -392,7 +393,7 @@ body {
     flex-wrap: wrap;
 }
 
-.profile-edit-btn{
+.profile-edit-btn {
     align-self: center;
     margin-right: 10%;
     height: 25px;
@@ -412,7 +413,7 @@ body {
     margin: 10%;
 }
 
-.user-review{
+.user-review {
     background-color: rgba(0, 0, 0, 0.1);
     /* height: 200px; */
     border-radius: 10px;
@@ -465,6 +466,7 @@ body {
     justify-content: center;
 
 }
+
 .admin-header-container {
     background-color: rgba(0, 0, 0, 0.1);
     /* background-color: aqua; */
@@ -483,7 +485,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
 }
 
 .user-card {
@@ -517,7 +519,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
 }
 
 .admin-reviews {
@@ -548,8 +550,43 @@ body {
     flex-direction: column;
 }
 
-#rest_img_upload{
+#rest_img_upload {
     align-self: center;
     width: 100px;
     height: 100px;
+}
+
+
+
+.edit-form-container {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    margin-left: -250px;
+    display: none;
+    flex-direction: column;
+    width: 500px;
+    justify-content: center;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    opacity: .9;
+}
+
+
+.edit-form-container > button {
+    align-self: center;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+.edit-form-container > textarea {
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }

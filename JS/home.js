@@ -1,5 +1,14 @@
 window.onload = async function () {
 
+    if(localStorage.getItem("user_id") == "loggedout"){
+        location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/index.html';
+    }else{
+
+
+
+
+
+
     console.log("hello from the other side" + localStorage.getItem("user_id"));
 
     var rest_list_container = document.getElementById("rest_list_container")
@@ -14,8 +23,10 @@ window.onload = async function () {
     header_home.addEventListener('click', function(){
         location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/home.html';
     })
-    header_logout.addEventListener('click', function(){
-        alert('logout')
+    document.getElementById("header_logout").addEventListener('click', function(){
+        console.log("logging out")
+        localStorage.setItem("user_id", "loggedout");
+        location.reload()
     })
     
 
@@ -85,4 +96,5 @@ window.onload = async function () {
 
 
 
+}
 }

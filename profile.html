@@ -23,17 +23,17 @@
                     <div><a id="header_logout">LogOut</a></div>
                 </div>
             </div>
-            <div class="profile-container">
+            <div class="profile-container" id="profile_container">
                 <div class="profile-picture-container"></div>
-                <button class="profile-edit-btn">Edit Profile</button>
+                <button id="edit_profile_btn" class="profile-edit-btn">Edit Profile</button>
             </div>
 
-            <div class="user-profile-info">
-                <p id="profile_username" >Username</p>
-                <p id="profile_email" >Email</p>
-                <p id="profile_bio" >bio and more stuff to add later</p>
+            <div class="user-profile-info" id="user_profile_info">
+                <p id="profile_username">Username</p>
+                <p id="profile_email">Email</p>
+                <p id="profile_bio">bio and more stuff to add later</p>
             </div>
-            
+
 
             <div class="user-reviews-container" id="user_reviews_container">
 
@@ -46,13 +46,48 @@
                     <div class="user-rating-review">5</div>
                     <div class="user-text-review">This one is soo bad, i didnt even try it </div>
                 </div> -->
-                
+
 
             </div>
 
 
 
-            
+
+
+
+
+
+
+
+
+            <div class="edit-form-container" id="edit_form_container">
+                <h1>Edit Profile</h1>
+
+                <label>Edit bio</label>
+                <!-- <input type="text" required> -->
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+
+                <label for="psw">Change Image</label>
+                <input type="file">
+
+                <button >Submit</button>
+                <button id="close_edit_form">Close</button>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
     </div>
 
