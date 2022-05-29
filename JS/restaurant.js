@@ -97,11 +97,12 @@ window.onload = async function () {
 
                 await axios({
                     method: 'post',
-                    url: 'http://localhost/eatvisor-backend/get-username.php',
+                    url: 'http://localhost/eatvisor-backend/get-username-img.php',
                     data: data1,
                 }).then(function (response) {
 
-                    review_username = response.data[0]['username'];
+                    review_user_info = response.data;
+                    console.log(review_user_info)
 
                 })
 
@@ -110,8 +111,10 @@ window.onload = async function () {
                 const card = document.createElement('div');
                 card.className = "restaurant-review"
                 card.innerHTML = `<div class="user-profile-review">
-                             <div class="user-profile-review-icon"></div>
-                             <div class="user-profile-review-name">${review_username}</div>
+                             <div class="user-profile-review-icon">
+                             <img src="data:image/png;base64,${review_user_info[0]['profile_picture']}">
+                             </div>
+                             <div class="user-profile-review-name">${review_user_info[0]['username']}</div>
                          </div>
                       <div class="user-rating-review">${rest_reviews[i]['rating']}</div>
                         <div class="user-text-review">${rest_reviews[i]['review_text']}</div>`;
