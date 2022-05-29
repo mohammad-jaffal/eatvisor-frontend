@@ -54,13 +54,18 @@ window.onload = async function () {
         data: data,
     }).then(function (response) {
         rest_info = response.data
-        console.log(rest_info[0]);
+        console.log(rest_info[0]['restaurant_image']);
 
         rest_name.innerHTML = rest_info[0]['restaurant_name']
         rest_location.innerHTML = rest_info[0]['location']
         rest_rating.innerHTML = rest_info[0]['rating']
 
-        // restaurant_image_container.style.backgroundImage = url(`data:image/png;base64,${rest_info[0]['profile_picture']}`)
+
+        var image = new Image();
+        image.className = "restaurant-banner-image"
+        image.src = `data:image/png;base64,${rest_info[0]['restaurant_image']}`;
+        restaurant_image_container.appendChild(image)
+        
 
     })
 
