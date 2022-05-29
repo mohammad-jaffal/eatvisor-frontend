@@ -44,7 +44,9 @@ window.onload = async function(){
 
             const card = document.createElement('div');
             card.className = "user-card"
-            card.innerHTML = `<div class="user-card-image"></div>
+            card.innerHTML = `<div class="user-card-image">
+            <img src="data:image/png;base64,${response.data[i]['profile_picture']}">
+            </div>
             <div class="user-card-info">
                 <div>username: ${response.data[i]['username']}</div>
                 <div>email: ${response.data[i]['email']}</div>

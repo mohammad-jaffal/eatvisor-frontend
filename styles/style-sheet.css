@@ -445,6 +445,12 @@ body {
     border-radius: 50%;
     height: 50px;
     width: 50px;
+    overflow: hidden;
+}
+
+.restaurant-profile-review-icon > img {
+    height: 100%;
+    width: 100%;
 }
 
 .restaurant-profile-review-name {
@@ -506,14 +512,23 @@ body {
     display: flex;
     margin: 1%;
     padding: 1%;
+    display: flex;
+    flex-wrap: wrap;
 
 }
 
 .user-card-image {
+    overflow: hidden;
     height: 100px;
     width: 100px;
     background-color: chartreuse;
     border-radius: 50%;
+}
+
+.user-card-image > img {
+    width: 100%;
+    height: 100%;
+    align-self: center;
 }
 
 .user-card-info {
@@ -611,3 +626,49 @@ body {
     background-size: cover;
     height: 100%;
 }
+
+.review-form-container {
+    width: 100%;
+    display: none;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.review-form {
+    width: 60%;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+
+    border-radius: 10px;
+
+    
+}
+
+.review-form > textarea {
+    width: 100%;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.input-stars-reveiw {
+    margin-bottom: 10px;
+}
+
+.review-star {
+    height: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.label-x {
+    display: flex;
+    justify-content: space-between;
+}
+
+.label-x > p {
+    cursor: pointer;
+}
+
+

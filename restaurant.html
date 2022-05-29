@@ -9,7 +9,7 @@
 
 <body>
     <div class="home-global-container">
-        
+
         <div class="home-body-container">
             <div class="header-container">
                 <div class="logo-name-container">
@@ -26,7 +26,7 @@
             </div>
 
 
-            <div class="restaurant-image-container" id="restaurant_image_container" >
+            <div class="restaurant-image-container" id="restaurant_image_container">
             </div>
             <div class="restaurant-info-container">
                 <div class="restaurant-info-left">
@@ -35,17 +35,36 @@
                 </div>
                 <div class="restaurant-info-right">
                     <div id="rest_rating">4</div>
-                    <button class="review-btn">Review</button>
+                    <button class="review-btn" id="review_btn">Review</button>
                 </div>
 
             </div>
 
+            <div class="review-form-container" id="review_form_container">
+                <div class="review-form">
+                    <div class="label-x">
+                        <label>Rate:</label>
+                        <p id="close_review">X</p>
+                    </div>
+                    <div class="input-stars-reveiw">
+                        <img src="./assets/icons/star.png" class="review-star" id="star_1">
+                        <img src="./assets/icons/star.png" class="review-star" id="star_2">
+                        <img src="./assets/icons/star.png" class="review-star" id="star_3">
+                        <img src="./assets/icons/star.png" class="review-star" id="star_4">
+                        <img src="./assets/icons/star.png" class="review-star" id="star_5">
+                    </div>
+                    <textarea class="input-text-review" id="input_text_review" cols="30" rows="7"></textarea>
+                    <button id="submit_review">Submit</button>
+
+                </div>
+            </div>
+
             <div class="restaurant-reviews-container" id="restaurant_reviews_container">
-                
-                
+
+
 
             </div>
-            
+
         </div>
     </div>
 
