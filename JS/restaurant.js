@@ -5,11 +5,11 @@ window.onload = async function () {
     } else {
 
 
-
+        // get restorant id from local storage
         var rest_id = localStorage.getItem("restaurant_id");
         rest_id = rest_id.split("_").pop()
         user_id = localStorage.getItem("user_id");
-        console.log("welcome in rest " + rest_id + " Mr " + user_id);
+        // console.log("welcome in rest " + rest_id + " Mr " + user_id);
 
 
         var review_btn = document.getElementById("review_btn")
@@ -21,7 +21,7 @@ window.onload = async function () {
         var rest_reviews_container = document.getElementById("restaurant_reviews_container")
         var restaurant_image_container = document.getElementById("restaurant_image_container")
 
-
+        // header menu options
         header_profile.addEventListener('click', function () {
             location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/profile.html';
         })
@@ -29,22 +29,13 @@ window.onload = async function () {
             location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/home.html';
         })
         document.getElementById("header_logout").addEventListener('click', function () {
-            console.log("logging out")
+            // console.log("logging out")
             localStorage.setItem("user_id", "loggedout");
             location.reload()
         })
 
 
-
-
-
-
-
-
-
-
-
-        var review_username;
+        // get data for the restaurant the user clicked on
         var rest_info;
         var rest_reviews;
         // get restaurants info
@@ -56,7 +47,7 @@ window.onload = async function () {
             data: data,
         }).then(function (response) {
             rest_info = response.data
-            console.log(rest_info[0]['restaurant_image']);
+            // console.log(rest_info[0]['restaurant_image']);
 
             rest_name.innerHTML = rest_info[0]['restaurant_name']
             rest_location.innerHTML = rest_info[0]['location']
@@ -81,7 +72,7 @@ window.onload = async function () {
         }).then(async function (response) {
 
             rest_reviews = response.data
-            console.log(rest_reviews[0]);
+            // console.log(rest_reviews[0]);
 
 
 
@@ -102,7 +93,7 @@ window.onload = async function () {
                 }).then(function (response) {
 
                     review_user_info = response.data;
-                    console.log(review_user_info)
+                    // console.log(review_user_info)
 
                 })
 
@@ -191,7 +182,7 @@ window.onload = async function () {
             star_5.style.backgroundColor = ""
         }
 
-
+        // submit review
         var submit_review = document.getElementById("submit_review")
         submit_review.addEventListener("click", function () {
             if (input_rating == 0 || input_text_review.value == "") {
@@ -208,12 +199,15 @@ window.onload = async function () {
                     data: review_data,
                 }).then(function (response) {
 
-                    console.log(response.data);
+                    // console.log(response.data);
 
                 })
+                location.reload()
             }
-        })
+            review_form_container.style.display = "none"
+            review_btn.style.pointerEvents = "all"
 
+        })
 
 
 

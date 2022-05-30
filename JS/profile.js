@@ -8,7 +8,7 @@ window.onload = async function () {
 
 
         var user_id = localStorage.getItem('user_id');
-        console.log("hello" + user_id)
+        // console.log("hello" + user_id)
 
 
         var profile_username = document.getElementById('profile_username')
@@ -31,7 +31,7 @@ window.onload = async function () {
         var profile_picture_container = document.getElementById("profile_picture_container")
 
 
-
+        // show edit form 
         edit_profile_btn.addEventListener('click', function () {
             edit_form_container.style.display = "flex"
             edit_profile_btn.style.display = "none"
@@ -42,7 +42,7 @@ window.onload = async function () {
 
 
 
-
+        // hide edit form 
         close_edit_form.addEventListener("click", function () {
             edit_form_container.style.display = "none"
             edit_profile_btn.style.display = "block"
@@ -57,23 +57,7 @@ window.onload = async function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        // header options
         header_profile.addEventListener('click', function () {
             location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/profile.html';
         })
@@ -81,11 +65,11 @@ window.onload = async function () {
             location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/home.html';
         })
         document.getElementById("header_logout").addEventListener('click', function () {
-            console.log("logging out")
+            // console.log("logging out")
             localStorage.setItem("user_id", "loggedout");
             location.reload()
         })
-
+        header_profile.style.textDecoration = "underline"
 
 
 
@@ -101,11 +85,11 @@ window.onload = async function () {
             data: data,
         }).then(function (response) {
             user_info = response.data;
-            console.log("user info", user_info[0]);
+            // console.log("user info", user_info[0]);
 
-            profile_username.innerHTML = "Username: "+user_info[0]['username']
-            profile_email.innerHTML = "Email: "+user_info[0]['email']
-            profile_bio.innerHTML = "Bio: "+user_info[0]['user_bio']
+            profile_username.innerHTML = "Username: " + user_info[0]['username']
+            profile_email.innerHTML = "Email: " + user_info[0]['email']
+            profile_bio.innerHTML = "Bio: " + user_info[0]['user_bio']
 
             var image = new Image();
             image.className = "profile_image_round"
@@ -120,14 +104,14 @@ window.onload = async function () {
 
 
 
-        //get user reviews
+        //get user approved reviews
         await axios({
             method: 'post',
             url: 'http://localhost/eatvisor-backend/get-user-review.php',
             data: data,
         }).then(async function (response) {
             user_reviews = response.data;
-            console.log("user reviews", user_reviews[0])
+            // console.log("user reviews", user_reviews[0])
 
 
             for (var i = 0; i < user_reviews.length; i++) {
@@ -144,11 +128,11 @@ window.onload = async function () {
 
 
                     restaurant_review_info = response.data;
-                    console.log(restaurant_review_info)
+                    // console.log(restaurant_review_info)
 
                 })
 
-
+                // create card for each review 
                 const card = document.createElement('div');
                 card.className = "user-review"
                 card.innerHTML = `<div class="restaurant-profile-review">
@@ -176,9 +160,6 @@ window.onload = async function () {
 
 
 
-        
-
-       
 
 
 
@@ -187,11 +168,11 @@ window.onload = async function () {
 
 
 
-        
-        submit_edit.addEventListener("click", function(){
+        // submit data edited 
+        submit_edit.addEventListener("click", function () {
 
             // editing bio 
-            if(bio_area.value != ""){
+            if (bio_area.value != "") {
                 let bio_data = new FormData();
 
                 bio_data.append('user_id', user_id);
@@ -202,56 +183,48 @@ window.onload = async function () {
                     url: 'http://localhost/eatvisor-backend/edit-bio.php',
                     data: bio_data,
                 }).then(function (response) {
-                    console.log(response.data)
+                    // console.log(response.data)
                 })
             }
 
 
 
             // uplaoding image as base64
-            if(document.getElementById('profile_pic_input').files.length != 0){
+            if (document.getElementById('profile_pic_input').files.length != 0) {
 
-                console.log("converting");
+                // console.log("converting");
                 var base64String = "";
                 const selectedFile = document.getElementById('profile_pic_input').files[0];
                 var reader = new FileReader();
-                
-                  
+
+
                 reader.onload = function () {
                     base64String = reader.result.replace("data:", "")
                         .replace(/^.+,/, "");
-              
+
                     imageBase64Stringsep = base64String;
-              
+
                     // alert(imageBase64Stringsep);
-                    console.log("-----------",base64String);
-                    
+                    // console.log("-----------",base64String);
+
 
 
                     let img_data = new FormData();
 
-                img_data.append('user_id', user_id);
-                img_data.append('profile_pic', base64String);
-                console.log(data);
-                axios({
-                    method: 'post',
-                    url: 'http://localhost/eatvisor-backend/edit-profile-img.php',
-                    data: img_data,
-                }).then(function (response) {
-                    console.log(response.data)
-                })
-    
+                    img_data.append('user_id', user_id);
+                    img_data.append('profile_pic', base64String);
+                    // console.log(data);
+                    axios({
+                        method: 'post',
+                        url: 'http://localhost/eatvisor-backend/edit-profile-img.php',
+                        data: img_data,
+                    }).then(function (response) {
+                        // console.log(response.data)
+                    })
+
                 }
-                reader.readAsDataURL(selectedFile); 
+                reader.readAsDataURL(selectedFile);
             }
-
-            
-
-
-
-
-
-
 
 
 
@@ -262,22 +235,10 @@ window.onload = async function () {
             user_reviews_container.style.display = "block"
 
 
-
-
-
-
-
+            location.reload()
 
 
         })
-
-
-        
-
-
-
-
-
 
 
     }

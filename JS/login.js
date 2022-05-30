@@ -19,19 +19,19 @@ window.onload = function () {
 
 
 
-
+    // show sign up form
     create_link.addEventListener("click", function () {
         signup_form.style.display = "flex";
         body_container.style.display = "none";
     });
 
-
+    // hide sign up form 
     x_icon.addEventListener("click", function () {
         signup_form.style.display = "none";
         body_container.style.display = "flex";
     });
 
-
+    // on sign up button click
     su_btn.addEventListener("click", function () {
         if (su_username.value == "" || su_email.value == "" || su_password.value == "" || su_confirm_password.value == "") {
             alert("fill all boxes");
@@ -53,18 +53,16 @@ window.onload = function () {
                     url: 'http://localhost/eatvisor-backend/sign-up.php',
                     data: data,
                 }).then(function (response) {
-                    console.log(response.data["success"]);
+                    // console.log(response.data["success"]);
                 })
 
             }
-
-
 
         }
     });
 
 
-
+    // on log in button click
     li_btn.addEventListener("click", function () {
         if (li_email.value == "" || li_password.value == "") {
             alert("fill all boxes");
@@ -80,8 +78,8 @@ window.onload = function () {
                 url: 'http://localhost/eatvisor-backend/log-in.php',
                 data: data,
             }).then(function (response) {
-                console.log(response.data["success"]);
-                console.log(response.data["user_id"]);
+                // console.log(response.data["success"]);
+                // console.log(response.data["user_id"]);
 
                 let data2 = new FormData();
                 data2.append('user_id', response.data["user_id"])
@@ -90,15 +88,15 @@ window.onload = function () {
                     url: 'http://localhost/eatvisor-backend/check-user.php',
                     data: data2
                 }).then(function (type_response) {
-                    console.log(type_response.data[0]['type'])
+                    // console.log(type_response.data[0]['type'])
 
 
                     if (response.data["success"]) {
-                        if (type_response.data[0]['type'] == 1) {// 1 -> user 0 -> admin
+                        if (type_response.data[0]['type'] == 1) { // if user 
                             localStorage.setItem("user_id", response.data["user_id"]);
                             location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/home.html';
                         }
-                        if (type_response.data[0]['type'] == 0) {// 1 -> user 0 -> admin
+                        if (type_response.data[0]['type'] == 0) {// if admin
                             localStorage.setItem("user_id", response.data["user_id"]);
                             location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/admin.html';
                         }
