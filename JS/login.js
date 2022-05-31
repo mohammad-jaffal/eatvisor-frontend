@@ -56,12 +56,12 @@ window.onload = function () {
                     // console.log(response.data["success"]);
                     // console.log(response.data["user_id"]);
 
-// redirect to home page after sign up 
+                    // redirect to home page after sign up 
                     if (response.data["success"]) {
                         localStorage.setItem("user_id", response.data["user_id"]);
                         location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/home.html';
-                        
-                        
+
+
                     }
 
 
@@ -90,7 +90,7 @@ window.onload = function () {
                 url: 'http://localhost/eatvisor-backend/log-in.php',
                 data: data,
             }).then(function (response) {
-                // console.log(response.data["success"]);
+                console.log(response.data["success"]);
                 // console.log(response.data["user_id"]);
 
                 let data2 = new FormData();
@@ -113,9 +113,11 @@ window.onload = function () {
                             location.href = 'file:///C:/Users/Admin/Desktop/FSW%20Projects/eatvisor-website/admin.html';
                         }
                     }
-
+                    else{
+                        alert("wrong credentials")
+                        li_password.value = ""
+                    }
                 })
-
 
             })
 
