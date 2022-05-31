@@ -5,11 +5,18 @@ window.onload = async function () {
     } else {
 
 
+
+
+
         // get restorant id from local storage
         var rest_id = localStorage.getItem("restaurant_id");
         rest_id = rest_id.split("_").pop()
         user_id = localStorage.getItem("user_id");
         // console.log("welcome in rest " + rest_id + " Mr " + user_id);
+
+
+        var resto_rating = localStorage.getItem(`resto_${rest_id}`)
+        // console.log("sadasd",resto_rating)
 
 
         var review_btn = document.getElementById("review_btn")
@@ -51,7 +58,7 @@ window.onload = async function () {
 
             rest_name.innerHTML = rest_info[0]['restaurant_name']
             rest_location.innerHTML = rest_info[0]['location']
-            rest_rating.innerHTML = rest_info[0]['rating']
+            rest_rating.innerHTML = resto_rating
 
 
             var image = new Image();

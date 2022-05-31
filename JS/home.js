@@ -69,6 +69,7 @@ window.onload = async function () {
 
 
 
+                localStorage.setItem(`resto_${x[i]['restaurant_id']}`, avg1);
 
 
         const card = document.createElement('div');
