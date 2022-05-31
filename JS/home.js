@@ -45,13 +45,39 @@ window.onload = async function () {
     // create card for each restaurant
     for (var i = 0; i < x.length; i++) {
 
+        var avg_review;
+
+
+        // console.log(x[i]['restaurant_id'])
+
+                let rev_data = new FormData();
+                rev_data.append('restaurant_id', x[i]['restaurant_id']);
+
+                await axios({
+                    method: 'post',
+                    url: 'http://localhost/eatvisor-backend/get-avg-review.php',
+                    data: rev_data,
+                }).then(function (response) {
+
+                    
+                    // console.log(response.data)
+                    avg_review = response.data[0]["AVG(rating)"]
+                    
+                    avg1 = Math.round(avg_review * 10) / 10
+                    console.log(avg1)
+                })
+
+
+
+
+
         const card = document.createElement('div');
         card.id = `rest_${x[i]['restaurant_id']}`;
         card.className = "restaurant-list-item"
         card.innerHTML = `<img src="data:image/png;base64,${x[i]['restaurant_image']}" class="restaurant-banner-image ">
                 <div class="item-info-container">
                     <p>${x[i]['restaurant_name']}</p>
-                    <p>${x[i]['rating']}</p>
+                    <p>${avg1}</p>
                     <p>${x[i]['location']}</p>
                 </div>`;
 

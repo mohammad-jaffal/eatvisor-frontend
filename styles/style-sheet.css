@@ -367,7 +367,7 @@ body {
 }
 
 .user-profile-review-icon {
-    background-color: gold;
+    background-color: rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     height: 50px;
     width: 50px;
@@ -387,9 +387,20 @@ body {
     margin-left: 15px;
 }
 
+#rest_rating {
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    font-size: 40px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    padding-left: 14px;
+    padding-right: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
 .user-rating-review {
-    color: rgb(255, 189, 22);
-    font-size: 20px;
+    color: rgb(255, 22, 22);
+    font-size: 25px;
     margin-bottom: 20px;
     margin-left: 20px;
 }
@@ -561,6 +572,9 @@ body {
     padding-left: 5%;
 }
 
+.user-card-info > div{
+    margin-bottom: 10%;
+}
 
 
 
