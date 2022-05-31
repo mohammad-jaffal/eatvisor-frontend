@@ -46,7 +46,7 @@ window.onload = async function () {
 
             all_reviews = response.data
             // console.log('hi', all_reviews)
-            console.log(all_reviews)
+            // console.log(all_reviews)
 
             if (all_reviews.length == 0) {
                 const empty_card = document.createElement('div');

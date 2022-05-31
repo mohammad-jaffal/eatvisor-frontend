@@ -235,9 +235,8 @@ window.onload = async function () {
             user_reviews_container.style.display = "block"
 
 
+            
             location.reload()
-
-
         })
 
 
