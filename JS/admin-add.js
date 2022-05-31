@@ -50,7 +50,6 @@ window.onload = async function () {
                 reader.onload = function () {
                     base64String = reader.result.replace("data:", "")
                         .replace(/^.+,/, "");
-
                     imageBase64Stringsep = base64String;
 
 

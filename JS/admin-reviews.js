@@ -38,7 +38,7 @@ window.onload = async function () {
         var all_reviews;
         await axios({
             method: 'post',
-            url: 'http://localhost/eatvisor-backend/get-reviews.php',
+            url: 'http://localhost/eatvisor-backend/get-reviews-inner.php',
         }).then(function (response) {
 
 
@@ -46,6 +46,7 @@ window.onload = async function () {
 
             all_reviews = response.data
             // console.log('hi', all_reviews)
+            console.log(all_reviews)
 
             if (all_reviews.length == 0) {
                 const empty_card = document.createElement('div');
@@ -61,8 +62,8 @@ window.onload = async function () {
                     const card = document.createElement('div');
                     card.className = "admin-reviews"
                     card.innerHTML = `<div class="admin-reviews-info">
-            <div>user: ${all_reviews[i]['users_user_id']}</div>
-            <div>restaurant: ${all_reviews[i]['restaurants_restaurant_id']}</div>
+            <div>user: ${all_reviews[i]['username']}</div>
+            <div>restaurant: ${all_reviews[i]['restaurant_name']}</div>
             <div>review: ${all_reviews[i]['review_text']}</div>
         </div>
         <div>
